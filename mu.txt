@@ -1,0 +1,61 @@
+http://digitalisi.tn:8080/camunda/app/welcome/default/
+chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
+
+agent 
+enseignant
+etudiant
+mdp: bpm
+
+*Enseignant : 
+
+**Processus
+-Demande attestation de présence :ok
+-Demande rattrapage :ok
+
+**Taches :
+p : demande de vérification note 
+-Vérifier copie
+-Ajouter commentaire justificatif
+
+-Vérification demande 
+-Affecter une séance 
+
+Etudiant :
+
+**Procesus : 
+-Demande attestation de présence : ok 
+	
+
+zeyda
+-invoice Receipt
+
+*Agent : 
+
+**Taches 
+
+p1 lel enseignant wala etudiant: Demande d'attestation de présence
+-Vérification Demande 
+-Preparer attestation
+
+p2: Demande de vérification note fel étape lekhra
+-Ajouter commentaire justificatif
+
+APIS:
+ 
+login AVEC GET
+http://digitalisi.tn:8080/engine-rest/user/'+username+'/profile
+
+profile: 
+http://digitalisi.tn:8080/engine-rest/user/' + username + '/profile
+
+counts:
+http://digitalisi.tn:8080/engine-rest/process-definition/count?latest=true&active=true&startableInTasklist=true&startablePermissionCheck=true&firstResult=0
+http://digitalisi.tn:8080/engine-rest/task/count?latest=true&active=true&startableInTasklist=true&startablePermissionCheck=true&firstResult=0&maxResults=15
+
+Process + Taches POST : 
+http://digitalisi.tn:8080/engine-rest/process-definition?latest=true&active=true&startableInTasklist=true&startablePermissionCheck=true&firstResult=0&maxResults=15
+http://digitalisi.tn:8080/engine-rest/task?latest=true&active=true&startableInTasklist=true&startablePermissionCheck=true&firstResult=0
+
+process + taches Get variables
+http://digitalisi.tn:8080/engine-rest/task/'+id+'/form-variables
+
